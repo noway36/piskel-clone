@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://apis.google.com/js/api.js"></script>
+        <title>PISKEL-CLONE</title>
+    </head>
+
+    <body>
+        <header>
+            <p>PISKEL CLONE</p>
+            <div class="google-sign-in-container">
+                <div class="google-drive-error">
+                    You have to <span class="red">SignIn</span> before upload to
+                    <span class="red">Google Drive&nbsp;&nbsp; =></span>
+                </div>
+                <div class="g-signin-btn sign-in-button">SignIn</div>
+                <div class="signin-data">
+                    <div class="g-user-data">
+                        <div class="g-sign-out-btn sign-in-button">
+                            Sign Out
+                        </div>
+                        <p>Hello, <span class="g-user-name"></span>!</p>
+                        <img class="signin-pic" src="#" alt="signin pic" />
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="landing-page">
+                <section class="preview-app-container">
+                    <div class="background-opacity"></div>
+                    <div class="create-sprite-container">
+                        <h2 class="piskel-about">
+                            Piskel is a free online editor for animated sprites
+                            & pixel art
+                        </h2>
+                        <p class="create-sprite-about">
+                            Create animations in your browser. Try an example,
+                            use Google sign in to access your gallery or simply
+                            create a new sprite.
+                        </p>
+                        <div class="create-sprite-btn" id="create-sprite">
+                            Create Sprite
+                        </div>
+                    </div>
+                </section>
+                <section class="examples-container">
+                    <div class="example-items">
+                        <h2 class="piskel-about">Example sprites</h2>
+                        <div class="items-info">
+                            <img class="example-item"
+                            src=images/example-1.gif /><img
+                            class="example-item"
+                            src=images/example-2.gif /><img
+                            class="example-item"
+                            src=images/example-4.gif />
+                        </div>
+                    </div>
+                </section>
+                <section class="overview-container">
+                    <h2 class="overview-info">Overview</h2>
+                    <div class="overview-items-container">
+                        <div class="overview-item">Wide Tooling</div>
+                        <div class="overview-item">Life Preview</div>
+                        <div class="overview-item">
+                            Export to gif/apng/piskel
+                        </div>
+                        <div class="overview-item">Google Sign in</div>
+                    </div>
+                    <div class="creator-info">
+                        Created by
+                        <a
+                            href="https://github.com/noway36"
+                            class="creator-link"
+                            target="_blank"
+                            >noway36<i class="git-icon fab fa-github"></i
+                        ></a>
+                    </div>
+                </section>
+            </section>
+            <div class="sprite-page">
+                <div class="keyboard-modal">
+                    <div class="modal-container">
+                        <h3 class="modal-name">Keyboard shortcuts</h3>
+                        <div class="key-messages-container">
+                            <span class="key-massage" id="key-message"
+                                >Press Any Key</span
+                            >
+                            <span id="modal-error" class="modal-error">
+                                Error! Key is already bound.
+                            </span>
+                        </div>
+                        <ul class="tools-container-modal">
+                            <div class="tools-modal-column">
+                                <li class="tool-modal modal-pen">
+                                    <span class="tool-button">Q</span>
+                                    <i class="fas fa-pen"></i>
+                                    <p class="tool-name-modal">Pen</p>
+                                </li>
+                                <li class="tool-modal modal-eraser">
+                                    <span class="tool-button">W</span>
+                                    <i class="fas fa-eraser"></i>
+                                    <p class="tool-name-modal">Eraser</p>
+                                </li>
+                                <li class="tool-modal modal-bucket">
+                                    <span class="tool-button">B</span>
+                                    <i class="fas fa-fill-drip"></i>
+                                    <p class="tool-name-modal">Bucket</p>
+                                </li>
+                                <li class="tool-modal modal-paint-all">
+                                    <span class="tool-button">A</span>
+                                    <i class="fas fa-tint"></i>
+                                    <p class="tool-name-modal">Paint All</p>
+                                </li>
+                                <li class="tool-modal modal-stroke-line">
+                                    <span class="tool-button">L</span>
+                                    <i class="fas fa-ruler"></i>
+                                    <p class="tool-name-modal">Line</p>
+                                </li>
+                                <li class="tool-modal modal-rectangle">
+                                    <span class="tool-button">R</span>
+                                    <i class="far fa-square"></i>
+                                    <p class="tool-name-modal">Rectangle</p>
+                                </li>
+                                <li class="tool-modal modal-circle">
+                                    <span class="tool-button">C</span>
+                                    <i class="far fa-circle"></i>
+                                    <p class="tool-name-modal">Circle</p>
+                                </li>
+                                <li class="tool-modal modal-dithering">
+                                    <span class="tool-button">D</span>
+                                    <i class="fas fa-chess-board"></i>
+                                    <p class="tool-name-modal">Dithering</p>
+                                </li>
+                            </div>
+                            <div class="tools-modal-column">
+                                <li class="tool-modal modal-lighten">
+                                    <span class="tool-button">H</span>
+                                    <i class="far fa-sun"></i>
+                                    <p class="tool-name-modal">Lighten</p>
+                                </li>
+                                <li class="tool-modal modal-rotate">
+                                    <span class="tool-button">T</span>
+                                    <i class="fas fa-redo-alt"></i>
+                                    <p class="tool-name-modal">Rotate</p>
+                                </li>
+                                <li class="tool-modal modal-move">
+                                    <span class="tool-button">V</span>
+                                    <i class="far fa-hand-paper"></i>
+                                    <p class="tool-name-modal">Move</p>
+                                </li>
+                                <li class="tool-modal modal-mirror-pen">
+                                    <span class="tool-button">Z</span>
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                    <p class="tool-name-modal">Mirror Pen</p>
+                                </li>
+                                <li class="tool-modal modal-color-picker">
+                                    <span class="tool-button">F</span>
+                                    <i class="fas fa-eye-dropper"></i>
+                                    <p class="tool-name-modal">Color Picker</p>
+                                </li>
+                                <li class="tool-modal modal-flip">
+                                    <span class="tool-button">I</span>
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <p class="tool-name-modal">Flip</p>
+                                </li>
+                                <li class="tool-modal modal-magic">
+                                    <span class="tool-button">E</span>
+                                    <i class="fas fa-magic"></i>
+                                    <div class="tool-modal-text">
+                                        <p class="tool-name-modal">Magic</p>
+                                        <p class="tool-modal-about">
+                                            Shift - fill all
+                                        </p>
+                                    </div>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tools-column">
+                    <div class="column-wrapper">
+                        <ul class="tools-container">
+                            <li class="pen tool tool-selected" title="pen">
+                                <i class="fas fa-pen pen"></i>
+                            </li>
+                            <li class="eraser tool" title="eraser">
+                                <i class="fas fa-eraser eraser"></i>
+                            </li>
+                            <li class="bucket tool" title="fill canvas">
+                                <i class="fas fa-fill-drip bucket"></i>
+                            </li>
+                            <li
+                                class="paint-all tool"
+                                title="paint all pixels of same color"
+                            >
+                                <i class="fas fa-tint paint-all"></i>
+                            </li>
+                            <li class="stroke-line tool" title="stroke-line">
+                                <i class="fas fa-ruler stroke-line"></i>
+                            </li>
+                            <li class="rectangle tool" title="rectangle">
+                                <i class="far fa-square rectangle"></i>
+                            </li>
+                            <li class="circle tool" title="circle">
+                                <i class="far fa-circle circle"></i>
+                            </li>
+                            <li class="dithering tool" title="dithering">
+                                <i class="fas fa-chess-board dithering"></i>
+                            </li>
+                            <li class="lighten tool" title="lighten">
+                                <i class="far fa-sun lighten"></i>
+                            </li>
+                            <li class="rotate tool" title="rotate">
+                                <i class="fas fa-redo-alt rotate"></i>
+                            </li>
+                            <li class="move tool" title="move">
+                                <i class="far fa-hand-paper move"></i>
+                            </li>
+                            <li class="mirror-pen tool" title="mirror-pen">
+                                <i class="fas fa-arrows-alt-h mirror-pen"></i>
+                            </li>
+                            <li class="color-picker tool" title="color-picker">
+                                <i class="fas fa-eye-dropper color-picker"></i>
+                            </li>
+                            <li class="flip tool" title="flip">
+                                <i class="fas fa-exchange-alt flip"></i>
+                            </li>
+                            <li
+                                class="magic tool"
+                                title="magic (SHIFT = paint all)"
+                            >
+                                <i class="fas fa-magic magic"></i>
+                            </li>
+                        </ul>
+                        <div class="color-select-container">
+                            <input
+                                type="color"
+                                id="main-color"
+                                value="#f00000"
+                                title="color"
+                                class="color-select"
+                            />
+                            <input
+                                type="color"
+                                id="secondary-color"
+                                value="#4413ec"
+                                title="2nd color"
+                                class="color-select"
+                            />
+                        </div>
+                        <i class="far fa-keyboard keyboard"></i>
+                    </div>
+                </div>
+                <div class="main-content-container">
+                    <div class="column-wrapper">
+                        <div class="frames-scroller">
+                            <ul class="frames-container" id="frames-container">
+                                <li
+                                    data-number="0"
+                                    class="frame frame-active"
+                                    draggable="true"
+                                >
+                                    <div class="frame-canvas-container">
+                                        <canvas class="frame-canvas"></canvas>
+                                    </div>
+                                    <button class="delete-frame frame-btn">
+                                        Del
+                                    </button>
+                                    <button class="copy-frame frame-btn">
+                                        Copy
+                                    </button>
+                                </li>
+                                <div class="add-frame" id="add-frame">
+                                    Add new frame
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column-wrapper">
+                        <div class="canvas-container">
+                            <canvas class="canvas" id="canvas"></canvas>
+                            <canvas
+                                class="temporary-canvas"
+                                id="temporary-canvas"
+                            ></canvas>
+                        </div>
+                        <div class="canvas-features">
+                            <div class="canvas-info">
+                                <p class="display-size">Size:</p>
+                                <span class="display-size" id="display-size">
+                                    [32x32]
+                                </span>
+                                <p class="display-coordinates">Coordinates:</p>
+                                <span
+                                    class="display-coordinates"
+                                    id="display-coordinates"
+                                >
+                                    [0:0]
+                                </span>
+                            </div>
+                            <div class="canvas-resize">
+                                <div
+                                    data-number="32"
+                                    class="predefined-size size-active size-32"
+                                >
+                                    32
+                                </div>
+                                <div
+                                    data-number="64"
+                                    class="predefined-size size-64"
+                                >
+                                    64
+                                </div>
+                                <div
+                                    data-number="128"
+                                    class="predefined-size size-128"
+                                >
+                                    128
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column-wrapper">
+                        <div class="preview-container">
+                            <canvas class="preview-canvas"></canvas>
+                            <div class="fps-container">
+                                <span class="display-fps" id="display-fps"
+                                    >13 FPS</span
+                                >
+                                <input
+                                    id="preview-fps"
+                                    class="range-fps"
+                                    type="range"
+                                    min="1"
+                                    max="24"
+                                />
+                            </div>
+                            <div class="fullscreen">Full</div>
+                        </div>
+                        <div class="export-container">
+                            <h3 class="export-info">Export (128x128):</h3>
+                            <div class="export-item" id="gif-export">
+                                .GIF
+                            </div>
+                            <div class="export-item" id="apng-export">
+                                .APNG
+                            </div>
+                            <div class="export-item" id="piskel-export">
+                                .PISKEL
+                            </div>
+                            <form id="g-export-form">
+                                <label for="gdrive-export" class="export-item"
+                                    >Google Drive</label
+                                >
+                                <input
+                                    accept=".gif, .apng"
+                                    type="file"
+                                    id="gdrive-export"
+                                />
+                                <button class="submit-button" type="submit">
+                                    SUBMIT
+                                </button>
+                            </form>
+                        </div>
+                        <div class="import-container">
+                            <h3 class="export-info">Import:</h3>
+                            <form id="piskel-import-form">
+                                <label for="piskel-import" class="export-item"
+                                    >.PISKEL</label
+                                >
+                                <input
+                                    accept=".piskel"
+                                    type="file"
+                                    id="piskel-import"
+                                />
+                                <button class="submit-button" type="submit">
+                                    SUBMIT
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    <script type="text/javascript" src="bundle.js"></script></body>
+</html>
